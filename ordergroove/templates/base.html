@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock %}{{ site.name }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if debug %}
+    <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}css/styles.less">
+    <script src="{{ STATIC_URL }}js/libs/less-1.4.1.min.js"></script>
+    {% else %}
+    <link type="text/css" href="{{ STATIC_URL }}css/styles.min.css">
+    {% endif %}
+
+    <script src="{{ STATIC_URL }}js/libs/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body>
+    {% include "navigation.html" %}
+
+    <div id="content" class="container">{% block content %}{% endblock content %}</div>
+
+    {% if debug %}
+    <!-- fix for the debug toolbar  -->
+    <script src="{{ STATIC_URL }}js/libs/jquery-bootstrap.js"></script>
+    <script data-main="{{ STATIC_URL }}js/main" src="{{ STATIC_URL }}js/libs/require.js"></script>
+    {% else %}
+    <script data-main="{{ STATIC_URL }}js/main" src="{{ STATIC_URL }}js/libs/require.js"></script>
+    <script src="{{ STATIC_URL }}js/main.min.js"></script>
+    {% endif %}
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
+</html>

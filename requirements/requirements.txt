@@ -1,0 +1,15 @@
+Django==1.6
+Fabric==1.8.0
+Pillow==2.2.1
+South==0.8.4
+Werkzeug==0.9.4
+argparse==1.2.1
+django-debug-toolbar==0.11.0
+django-extensions==1.2.5
+easy-thumbnails==1.4
+psycopg2==2.5.1
+pycrypto==2.6.1
+uWSGI==1.9.20
+wsgiref==0.1.2
+ipython
+ipdb
