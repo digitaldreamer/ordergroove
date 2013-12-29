@@ -24,8 +24,8 @@ SECRET_KEY = '!_!s8r72@@b&=8rb%uaty(d*ol$)wxje=xt%xxlg1u72gc(1+('
 SITE_ID = 1
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-TEMPLATE_DEBUG = True
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['*']
 INTERNAL_IPS = ('127.0.0.1',)
 MEDIA_VERSION = random.randint(1, 1000000)
@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     # APPS #
     ########
     'ordergroove',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -120,6 +121,24 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     BASE_DIR + '/ordergroove/templates/',
 )
+
+# email
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 1023
+# EMAIL_HOST_USER = 'username'
+# EMAIL_HOST_PASSWORD = 'password'
+# DEFAULT_FROM_EMAIL = ''
+
+##########
+# CUSTOM #
+##########
+REGISTRATION = {
+    'LOGIN_REDIRECT': 'home',
+    'LOGOUT_REDIRECT': 'registration_logout',
+    'CONFIRM_EMAIL': False,
+}
+
 
 ##################
 # LOCAL SETTINGS #

@@ -26,11 +26,11 @@
           <li><a href="#">Password</a></li>
           <li><a href="#">Orders</a></li>
           <li class="divider"></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="{% url 'registration_logout' %}">Logout</a></li>
         </ul>
       </li>
       {% else %}
-      <li><a href="#">Login</a></li>
+      <li><a href="{% url 'registration_login' %}">Login</a></li>
       {% endif %}
     </ul>
 
