@@ -8,6 +8,6 @@
 <p>Thank you for registering with {{ site.name }}</p>
 <p>
   <a class="btn btn-success" href="{% url 'home' %}">Continue Shopping</a>
-  <a class="btn btn-primary" href="#">Account</a>
+  <a class="btn btn-primary" href="{% url 'accounts_dashboard' %}">Account</a>
 </p>
 {% endblock content %}

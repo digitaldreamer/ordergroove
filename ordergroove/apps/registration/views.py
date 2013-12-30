@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.contrib.auth import authenticate, login as _login, logout as _logout
-from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.forms.util import ErrorList
 from django.http import HttpResponseRedirect

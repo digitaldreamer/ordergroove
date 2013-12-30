@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block content %}
+<h1>{{ user.first_name }} {{ user.last_name }}</h1>
+
+<ul class="nav nav-tabs">
+  <li {% if page == 'accounts_dashboard' %}class="active"{% endif %}><a href="#">Dashboard</a></li>
+  <li {% if page == 'accounts_settings' %}class="active"{% endif %}><a href="#">Settings</a></li>
+  <li {% if page == 'accounts_password' %}class="active"{% endif %}><a href="#">Password</a></li>
+  <li {% if page == 'accounts_orders' %}class="active"{% endif %}><a href="#">Orders</a></li>
+</ul>
+
+<div id="account-content">
+  {% block account_content %}{% endblock %}
+</div>
+{% endblock content %}

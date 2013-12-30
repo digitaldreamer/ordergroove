@@ -19,7 +19,7 @@
 
     <script src="{{ STATIC_URL }}js/libs/modernizr-2.6.2.min.js"></script>
   </head>
-  <body>
+  <body id="{% block body_id %}{% endblock %}">
     {% include "_navigation.html" %}
 
     <div id="content" class="container">{% block content %}{% endblock content %}</div>
