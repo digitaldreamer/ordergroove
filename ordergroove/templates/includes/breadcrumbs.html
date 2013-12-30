@@ -1,0 +1,11 @@
+{% if breadcrumbs %}
+<ol class="breadcrumb">
+  {% for breadcrumb in breadcrumbs %}
+  {% if forloop.last and forloop.counter > 1 %}
+  <li class="active">{{ breadcrumb.name }}</li>
+  {% else %}
+  <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.name }}</a></li>
+  {% endif %}
+  {% endfor %}
+</ol>
+{% endif %}

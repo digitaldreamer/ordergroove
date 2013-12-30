@@ -1,0 +1,7 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}{{ category.name }} | {{ block.super }}{% endblock %}
+
+{% block shop_content %}
+<h1>{{ category.name }}</h1>
+{% endblock shop_content %}

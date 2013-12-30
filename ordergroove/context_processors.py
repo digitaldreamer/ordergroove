@@ -12,4 +12,3 @@ def _settings(request):
         'MEDIA_VERSION': settings.MEDIA_VERSION,
         'site': Site.objects.get(id=settings.SITE_ID),
     }
-

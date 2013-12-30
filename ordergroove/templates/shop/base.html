@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Shop{% endblock %}
+{% block body_id %}shop{% endblock %}
+
+{% block content %}
+<div class='row'>
+  <div class='col-md-3'>
+    <ul id="category-nav" class="nav nav-pills nav-stacked">
+      {% for root_category in root_categories %}
+      <li {% if category.id == root_category.id %}class="active"{% endif %}><a href="{{ root_category.get_absolute_url }}">{{ root_category.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="col-md-9">
+    {% block shop_content %}{% endblock %}
+  </div>
+</div>
+{% endblock content %}

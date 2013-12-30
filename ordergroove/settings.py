@@ -56,6 +56,8 @@ INSTALLED_APPS = (
     ########
     'ordergroove',
     'registration',
+    'shop',
+    'shop.products',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,6 +84,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
     # custom
     "ordergroove.context_processors.main_context",
+    "shop.context_processors.shop_context",
 )
 
 ROOT_URLCONF = 'ordergroove.urls'
