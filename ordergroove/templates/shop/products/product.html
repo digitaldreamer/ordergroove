@@ -1,0 +1,24 @@
+{% extends 'shop/base.html' %}
+{% load thumbnail %}
+
+{% block title %}{{ product.name }} | {{ block.super }}{% endblock %}
+
+{% block shop_content %}
+<h1>Product: {{ product.name }}</h1>
+
+{% with product.main_image as main_image %}
+{% if main_image %}
+<img src="{% thumbnail main_image.image 100x100 upscale crop %}">
+{% endif %}
+{% endwith %}
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>${{ product.price|floatformat:2 }}</td>
+  </tr>
+  <tr>
+    <td>{{ product.description }}</td>
+  </tr>
+</table>
+
+<input class="btn btn-success" type="submit" value="Add to Cart">
+{% endblock shop_content %}

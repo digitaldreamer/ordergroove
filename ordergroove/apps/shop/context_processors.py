@@ -9,4 +9,3 @@ def _products(request):
     return {
         'root_categories': Category.root_categories()
     }
-

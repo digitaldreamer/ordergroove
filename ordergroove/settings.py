@@ -146,6 +146,9 @@ REGISTRATION = {
     'CONFIRM_EMAIL': False,
 }
 
+SHOP = {
+    'TRACK_INVENTORY': True,
+}
 
 ##################
 # LOCAL SETTINGS #

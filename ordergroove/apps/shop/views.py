@@ -11,6 +11,8 @@ def _breadcrumbs():
 
 # Create your views here.
 def index(request, template='shop/index.html'):
+    request.session['category_id'] = None
+
     context = {
         'section': 'shop',
         'breadcrumbs': _breadcrumbs(),
