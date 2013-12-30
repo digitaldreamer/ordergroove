@@ -1,0 +1,6 @@
+Hello {{ user.first_name }},
+
+Thank you for registering at {{ site.name }}!
+
+You can view your account at:
+http://{{ site.domain }}

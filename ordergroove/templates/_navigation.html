@@ -12,7 +12,7 @@
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li {% if section == 'index' %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
       <li><a href="#">Shop</a></li>
     </ul>
 
@@ -30,7 +30,7 @@
         </ul>
       </li>
       {% else %}
-      <li><a href="{% url 'registration_login' %}">Login</a></li>
+      <li {% if section == 'registration' %}class="active"{% endif %}><a href="{% url 'registration_login' %}">Login</a></li>
       {% endif %}
     </ul>
 

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 import random
 import sys
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(BASE_DIR, 'ordergroove/apps'))
 
@@ -22,6 +23,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'ordergroove/apps'))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!_!s8r72@@b&=8rb%uaty(d*ol$)wxje=xt%xxlg1u72gc(1+('
 SITE_ID = 1
+LOGIN_URL = '/registration/login/'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -123,9 +125,10 @@ TEMPLATE_DIRS = (
 )
 
 # email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'localhost'
-# EMAIL_PORT = 1023
+# EMAIL_PORT = 25
 # EMAIL_HOST_USER = 'username'
 # EMAIL_HOST_PASSWORD = 'password'
 # DEFAULT_FROM_EMAIL = ''
@@ -136,6 +139,7 @@ TEMPLATE_DIRS = (
 REGISTRATION = {
     'LOGIN_REDIRECT': 'home',
     'LOGOUT_REDIRECT': 'registration_logout',
+    'REGISTER_REDIRECT': 'registration_register_complete',
     'CONFIRM_EMAIL': False,
 }
 
