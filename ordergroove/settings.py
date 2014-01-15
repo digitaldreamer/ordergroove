@@ -87,6 +87,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "shop.context_processors.shop_context",
 )
 
+TEMPLATE_LOADERS = (
+    'ordergroove.template_loaders.SiteLoader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+)
+
 ROOT_URLCONF = 'ordergroove.urls'
 WSGI_APPLICATION = 'ordergroove.wsgi.application'
 
